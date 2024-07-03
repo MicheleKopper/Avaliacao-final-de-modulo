@@ -195,4 +195,10 @@ app.post('/login', (request, response) => {
     response.status(200).json({ mensagem: `Seja bem - vindo ${verificarEmail.user_name}! Pessoa usuária logada com sucesso.` })
 })
 
+//------- DEFAULT PATH ----
+
+app.get('/', (request, response) => {
+    response.status(200).send('Bem vindo à aplicação 🚀');
+})
+
 app.listen(3333, () => console.log('Bem vindo à aplicação'))
