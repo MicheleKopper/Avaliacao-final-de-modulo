@@ -191,8 +191,14 @@ app.post('/login', (request, response) => {
         response.status(400).json({ mensagem: 'Email não encontrado no sistema, verifique ou crie uma conta.' })
     }
 
+    const data = {
+        id: verificarEmail.id,
+        name: verificarEmail.user_name,
+        email: verificarEmail.email
+    }
+
     // EMAIL APROVADO
-    response.status(200).json({ mensagem: `Seja bem - vindo ${verificarEmail.user_name}! Pessoa usuária logada com sucesso.` })
+    response.status(200).json({ mensagem: `Seja bem - vindo ${verificarEmail.user_name}! Pessoa usuária logada com sucesso.` , data })
 })
 
 //------- DEFAULT PATH ----
